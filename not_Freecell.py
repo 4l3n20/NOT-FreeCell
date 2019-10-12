@@ -109,7 +109,8 @@ class notFreecell:
     def victory_check(self):
 
         # check if all foundations are not empty
-        if self.foundation_S.count != 0 and self.foundation_D.count != 0 and self.foundation_C.count != 0 and self.foundation_H.count != 0:
+        if self.foundation_S.count != 0 and self.foundation_D.count != 0 and self.foundation_C.count != 0 and \
+        self.foundation_H.count != 0:
             foundation_S_lst_item = self.foundation_S.peek()
             foundation_D_lst_item = self.foundation_D.peek()
             foundation_C_lst_item = self.foundation_C.peek()
@@ -244,25 +245,29 @@ class notFreecell:
                 if sublist[-1].get_suit() == seled_Crd[-1] and sublist[-1].get_rank() == seled_Crd[-3]:
                     # Moving ACE,JACK,QUEEN,KING to corresponding foundation
                     # move ACE,JACK,QUEEN,KING of Diamond to foundation[0]
-                    if ranks_dic['1'] == seled_Crd[-3] or ranks_dic['10'] == seled_Crd[-3] or ranks_dic['11'] == seled_Crd[-3] or ranks_dic['12'] == seled_Crd[-3] or ranks_dic['13'] == seled_Crd[-3] :
+                    if ranks_dic['1'] == seled_Crd[-3] or ranks_dic['10'] == seled_Crd[-3] or ranks_dic['11'] == seled_Crd[-3] or \
+                    ranks_dic['12'] == seled_Crd[-3] or ranks_dic['13'] == seled_Crd[-3] :
                         if suits['1'] == seled_Crd[-1]:
                             src_To_Dest = sublist.pop()
                             self.foundation_D.push(src_To_Dest)
                             print('move done to foundation Diamonds')
                         # move ACE,JACK,QUEEN,KING of Hearts to foundation[1]
-                        elif ranks_dic['1'] == seled_Crd[-3] or ranks_dic['10'] == seled_Crd[-3] or ranks_dic['11'] == seled_Crd[-3] or ranks_dic['12'] == seled_Crd[-3] or ranks_dic['13'] == seled_Crd[-3] :
+                        elif ranks_dic['1'] == seled_Crd[-3] or ranks_dic['10'] == seled_Crd[-3] or ranks_dic['11'] == seled_Crd[-3] or \
+                        ranks_dic['12'] == seled_Crd[-3] or ranks_dic['13'] == seled_Crd[-3] :
                             if suits['2'] == seled_Crd[-1]:
                                 src_To_Dest = sublist.pop()
                                 self.foundation_H.push(src_To_Dest)
                                 print('move done to foundation Harts')
                             # move ACE,JACK,QUEEN,KING of Club to foundation[2]
-                            elif ranks_dic['1'] == seled_Crd[-3] or ranks_dic['10'] == seled_Crd[-3] or ranks_dic['11'] == seled_Crd[-3] or ranks_dic['12'] == seled_Crd[-3] or ranks_dic['13'] == seled_Crd[-3] :
+                            elif ranks_dic['1'] == seled_Crd[-3] or ranks_dic['10'] == seled_Crd[-3] or ranks_dic['11'] == seled_Crd[-3] \
+                            or ranks_dic['12'] == seled_Crd[-3] or ranks_dic['13'] == seled_Crd[-3] :
                                 if suits['3'] == seled_Crd[-1]:
                                     src_To_Dest = sublist.pop()
                                     self.foundation_C.push(src_To_Dest)
                                     print('move done to foundation Clubs')
                                 # move ACE,JACK,QUEEN,KING of Spade to foundation[3]
-                                elif ranks_dic['1'] == seled_Crd[-3] or ranks_dic['10'] == seled_Crd[-3] or ranks_dic['11'] == seled_Crd[-3] or ranks_dic['12'] == seled_Crd[-3] or ranks_dic['13'] == seled_Crd[-3] :
+                                elif ranks_dic['1'] == seled_Crd[-3] or ranks_dic['10'] == seled_Crd[-3] or ranks_dic['11'] == seled_Crd[-3] \
+                                or ranks_dic['12'] == seled_Crd[-3] or ranks_dic['13'] == seled_Crd[-3] :
                                     if suits['4'] == seled_Crd[-1]:
                                         src_To_Dest = sublist.pop()
                                         self.foundation_S.push(src_To_Dest)
